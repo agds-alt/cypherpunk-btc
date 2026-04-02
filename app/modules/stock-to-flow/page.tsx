@@ -265,7 +265,7 @@ export default function StockToFlow() {
               <h3 className="text-xl font-bold text-orange-400 mb-4">3. Validates HODLing</h3>
               <p className="text-slate-300 text-sm leading-relaxed">
                 S2F model shows that HOLDING through cycles beats trading. As scarcity increases
-                (halvings), value tends to follow. Time in market > timing the market.
+                (halvings), value tends to follow. Time in market {'>'} timing the market.
               </p>
             </div>
 
