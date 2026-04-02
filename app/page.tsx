@@ -1,65 +1,152 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+
+export default function LandingPage() {
+  const router = useRouter();
+  const [isVisible, setIsVisible] = useState(false);
+  const [glowIntensity, setGlowIntensity] = useState(0);
+
+  useEffect(() => {
+    // Fade in animation
+    setTimeout(() => setIsVisible(true), 100);
+
+    // Pulsing glow effect
+    const interval = setInterval(() => {
+      setGlowIntensity(prev => (prev + 1) % 100);
+    }, 50);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleEnter = () => {
+    // Fade out before navigation
+    setIsVisible(false);
+    setTimeout(() => {
+      router.push('/home');
+    }, 500);
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <div className="min-h-screen bg-black flex items-center justify-center overflow-hidden relative">
+      {/* Animated background particles */}
+      <div className="absolute inset-0">
+        {[...Array(50)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-orange-500/20 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animation: `float ${5 + Math.random() * 10}s linear infinite`,
+              animationDelay: `${Math.random() * 5}s`
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Main content */}
+      <div
+        className={`relative z-10 text-center transition-all duration-1000 ${
+          isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+        }`}
+      >
+        {/* Bitcoin Symbol with Glow */}
+        <div className="mb-8 relative">
+          <div
+            className="absolute inset-0 blur-3xl"
+            style={{
+              background: `radial-gradient(circle, rgba(249, 115, 22, ${0.3 + (glowIntensity / 200)}) 0%, transparent 70%)`,
+              transform: 'scale(1.5)'
+            }}
+          />
+          <div className="relative text-9xl font-bold bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent animate-pulse">
+            ₿
+          </div>
+        </div>
+
+        {/* Title */}
+        <h1 className="text-5xl md:text-7xl font-bold mb-4 tracking-tight">
+          <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent">
+            Cypherpunk BTC
+          </span>
+        </h1>
+
+        {/* Subtitle */}
+        <p className="text-slate-400 text-xl md:text-2xl mb-12 font-light tracking-wide">
+          Satoshi's Vision • Digital Sovereignty
+        </p>
+
+        {/* Enter Button */}
+        <button
+          onClick={handleEnter}
+          className="group relative px-12 py-5 text-lg font-medium text-white transition-all duration-300 hover:scale-105 active:scale-95"
+        >
+          {/* Button glow effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity" />
+
+          {/* Button border animation */}
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity animate-spin-slow"
+               style={{ padding: '2px' }}>
+            <div className="w-full h-full bg-black rounded-full" />
+          </div>
+
+          {/* Button content */}
+          <span className="relative z-10 flex items-center gap-3 bg-gradient-to-r from-orange-500 to-orange-600 px-12 py-4 rounded-full">
+            Enter the Rabbit Hole
+            <svg
+              className="w-6 h-6 group-hover:translate-x-2 transition-transform"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </span>
+        </button>
+
+        {/* Quote */}
+        <div className="mt-16 max-w-2xl mx-auto">
+          <p className="text-slate-600 text-sm italic border-l-2 border-orange-500/30 pl-4">
+            "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks"
+          </p>
+          <p className="text-slate-700 text-xs mt-2">
+            — Genesis Block, Satoshi Nakamoto
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </div>
+
+      {/* CSS Animations */}
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0) translateX(0);
+          }
+          25% {
+            transform: translateY(-20px) translateX(10px);
+          }
+          50% {
+            transform: translateY(-10px) translateX(-10px);
+          }
+          75% {
+            transform: translateY(-15px) translateX(5px);
+          }
+        }
+
+        @keyframes spin-slow {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+
+        .animate-spin-slow {
+          animation: spin-slow 3s linear infinite;
+        }
+      `}</style>
     </div>
   );
 }

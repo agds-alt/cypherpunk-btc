@@ -1,0 +1,381 @@
+export type Language = 'en' | 'id';
+
+export const translations = {
+  en: {
+    // Home Page
+    home: {
+      tagline: "Satoshi's Vision",
+      title: "Cypherpunk BTC",
+      subtitle: "Learn Bitcoin from Zero",
+      description: "Not as an investment. Not for 'number go up'.",
+      descriptionHighlight1: "resistance to centralized control",
+      descriptionHighlight2: "financial sovereignty",
+      genesisQuote: "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks",
+      genesisAuthor: "Satoshi Nakamoto, Genesis Block",
+      stats: {
+        supply: "Fixed Supply Cap",
+        years: "Years Decentralized",
+        authority: "Central Authority"
+      },
+      coreUnderstanding: "Core Understanding",
+      wrongApproach: "Wrong Approach",
+      wrongList: [
+        "Bitcoin = get rich quick",
+        "Trading for profit",
+        '"When Lambo?"',
+        "Store on exchanges (CEX)",
+        "Just price watching"
+      ],
+      rightApproach: "Right Approach",
+      rightList: [
+        "Bitcoin = opt-out of fiat",
+        "HODL for sovereignty",
+        '"Fix the money, fix the world"',
+        "Self-custody (your keys)",
+        "Understand fundamentals"
+      ],
+      learningPath: "Learning Path",
+      forDevelopers: "For Developers:",
+      forDevsDesc: "This curriculum teaches Bitcoin from",
+      codeLevel: "code level",
+      forDevsDesc2: ", not investment level.",
+      forDevsDesc3: "You'll understand cryptography, consensus, economics, and actually use Bitcoin (self-custody), not just speculate on price.",
+      comingSoon: "Coming Soon"
+    },
+
+    // Modules
+    modules: {
+      module: "Module",
+      austrian: {
+        title: "Austrian Economics",
+        subtitle: "Why Sound Money Matters",
+        topics: ["Sound Money Principles", "Time Preference", "Fiat vs Hard Money", "Capital Formation"]
+      },
+      monetary: {
+        title: "Monetary History",
+        subtitle: "How Fiat Always Fails",
+        topics: ["Gold Standard Era", "Bretton Woods", "Nixon Shock", "Hyperinflation Cases"]
+      },
+      halving: {
+        title: "Halving Cycles",
+        subtitle: "4-Year Pattern (Data-Backed)",
+        topics: ["Supply Reduction", "Historical Data", "Price Impact", "Predictable Policy"]
+      },
+      s2f: {
+        title: "Stock-to-Flow",
+        subtitle: "Scarcity → Value",
+        topics: ["S2F Model Explained", "Bitcoin vs Gold", "Hardness Metric", "Value Projection"]
+      },
+      custody: {
+        title: "Self-Custody",
+        subtitle: "Actually USE Bitcoin",
+        topics: ["Hardware Wallets", "Seed Security", "Multi-sig Setup", "Offline Signing"]
+      }
+    },
+
+    // Module 1: Austrian Economics
+    austrian: {
+      pageTitle: "Austrian Economics & Sound Money",
+      pageSubtitle: "Understanding WHY Bitcoin matters - from economic first principles",
+      whyMatters: "Why This Matters",
+      whyMattersDesc: "Austrian Economics is the foundational philosophy behind Bitcoin. Without understanding this, you'll only see Bitcoin as a 'digital asset' - missing the entire point.",
+      soundMoneyTitle: "What is Sound Money?",
+      scarce: "Scarce",
+      scarceDesc: "Supply is limited and predictable",
+      fiatInfinite: "Fiat: Infinite supply",
+      btcCap: "Bitcoin: 21M cap",
+      durable: "Durable",
+      durableDesc: "Lasts forever without degrading",
+      paperDegrades: "Paper: Degrades, burns",
+      btcDigital: "Bitcoin: Digital, permanent",
+      divisible: "Divisible",
+      divisibleDesc: "Can be divided into small units",
+      goldHard: "Gold: Hard to divide",
+      btcSats: "Bitcoin: 8 decimals (satoshi)",
+      timePreference: "Time Preference",
+      highTimePreference: "High Time Preference (Fiat)",
+      lowTimePreference: "Low Time Preference (Bitcoin)",
+      moneyLosesValue: "Money loses value → Spend NOW",
+      noSave: "No incentive to save",
+      noCapital: "No capital accumulation",
+      povertyCycle: "Poverty cycle",
+      moneyGainsValue: "Money gains value → SAVE",
+      deferGratification: "Incentive to defer gratification",
+      capitalAccumulation: "Capital accumulation",
+      wealthBuilding: "Wealth building",
+      inflationCalculator: "Inflation Impact Calculator",
+      inflationDesc: "See how inflation destroys your purchasing power over time:",
+      years: "Years:",
+      inflationRate: "Inflation Rate:",
+      perYear: "per year",
+      initialAmount: "Initial Amount",
+      after: "After",
+      purchasingPowerLost: "Purchasing Power Lost",
+      realityCheck: "Reality check:",
+      realityCheckDesc: "inflation, your $100 becomes worth only",
+      realityCheckDesc2: "in",
+      realityCheckDesc3: "years. You lost",
+      realityCheckDesc4: "of your purchasing power",
+      doingNothing: "doing absolutely nothing",
+      cantillonEffect: "The Cantillon Effect",
+      cantillonDesc: "Those closest to the money printer benefit most.",
+      cantillonStep1: "Central Bank prints money ($2T stimulus)",
+      cantillonStep2: "Banks & institutions get it FIRST",
+      cantillonStep3: "They buy assets (stocks, real estate)",
+      cantillonStep4: "Asset prices inflate",
+      cantillonStep5: "Rich get richer (own assets)",
+      cantillonStep6: "Money trickles to regular people (months later)",
+      cantillonStep7: "Poor face inflation (groceries, rent up)",
+      realData: "Real Data (2020-2024)",
+      moneyPrinted: "Money printed:",
+      sp500: "S&P 500:",
+      housing: "Housing:",
+      wages: "Wages:",
+      groceries: "Groceries:",
+      winner: "Winner:",
+      assetHolders: "Asset holders (rich)",
+      loser: "Loser:",
+      wageEarners: "Wage earners (poor & middle class)",
+      btcVsFiat: "Bitcoin vs Fiat",
+      property: "Property",
+      fiatUSD: "Fiat (USD)",
+      bitcoin: "Bitcoin",
+      supply: "Supply",
+      infinite: "Infinite",
+      fixed21m: "21M fixed",
+      inflation: "Inflation",
+      inflation2to10: "2-10% per year",
+      inflation0: "0% after 2140",
+      control: "Control",
+      centralAuthority: "Central authority",
+      decentralized: "Decentralized",
+      issuance: "Issuance",
+      politicalDecision: "Political decision",
+      mathAlgo: "Mathematical algo",
+      confiscation: "Confiscation",
+      easyFreeze: "Easy (freeze account)",
+      hardNeedKeys: "Hard (need keys)",
+      transparency: "Transparency",
+      opaque: "Opaque",
+      auditable100: "100% auditable",
+      censorship: "Censorship",
+      easyBlock: "Easy (block tx)",
+      resistantP2P: "Resistant (P2P)",
+      keyTakeaways: "Key Takeaways",
+      takeaway1: "Sound Money = Scarce, durable, divisible (Bitcoin excels at all 3)",
+      takeaway2: "Time Preference determines behavior: Fiat → consume now, Bitcoin → save & build",
+      takeaway3: "Cantillon Effect = Fiat benefits the rich (those near printer win)",
+      takeaway4: "Inflation = Hidden tax that steals purchasing power slowly",
+      takeaway5: "Bitcoin = Opt-out of broken system (not just investment, economic revolution)",
+      backToModules: "Back to Modules",
+      nextMonetary: "Next: Monetary History"
+    },
+
+    // Navigation
+    nav: {
+      backToModules: "Back to Modules",
+      backToHome: "Back to Home",
+      next: "Next:",
+      previous: "Previous:"
+    },
+
+    // Common
+    common: {
+      keyTakeaways: "Key Takeaways",
+      readMore: "Read More",
+      showExample: "Show",
+      hideExample: "Hide"
+    }
+  },
+
+  id: {
+    // Home Page (Already translated with natural Indonesian)
+    home: {
+      tagline: "Visi Satoshi",
+      title: "Cypherpunk BTC",
+      subtitle: "Belajar Bitcoin dari Nol",
+      description: "Bukan untuk investasi. Bukan cuma 'angka naik'.",
+      descriptionHighlight1: "perlawanan terhadap kontrol terpusat",
+      descriptionHighlight2: "kedaulatan finansial",
+      genesisQuote: "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks",
+      genesisAuthor: "Satoshi Nakamoto, Blok Genesis",
+      stats: {
+        supply: "Pasokan Maksimal Tetap",
+        years: "Tahun Terdesentralisasi",
+        authority: "Otoritas Pusat"
+      },
+      coreUnderstanding: "Pemahaman Inti",
+      wrongApproach: "Pendekatan Salah",
+      wrongList: [
+        "Bitcoin = cepat kaya",
+        "Trading buat profit",
+        '"Kapan Lambo?"',
+        "Simpan di exchange (CEX)",
+        "Cuma nonton harga"
+      ],
+      rightApproach: "Pendekatan Benar",
+      rightList: [
+        "Bitcoin = keluar dari fiat",
+        "HODL buat kedaulatan",
+        '"Benerin uang, benerin dunia"',
+        "Self-custody (kunci lu sendiri)",
+        "Paham fundamental dulu"
+      ],
+      learningPath: "Jalur Pembelajaran",
+      forDevelopers: "Buat Developer:",
+      forDevsDesc: "Kurikulum ini ngajarin Bitcoin dari level",
+      codeLevel: "code",
+      forDevsDesc2: ", bukan level investasi.",
+      forDevsDesc3: "Lu bakal paham kriptografi, konsensus, ekonomi, dan bener-bener pake Bitcoin (self-custody), bukan cuma spekulasi harga doang.",
+      comingSoon: "Segera Hadir"
+    },
+
+    // Modules (Natural Indonesian)
+    modules: {
+      module: "Modul",
+      austrian: {
+        title: "Ekonomi Austria",
+        subtitle: "Kenapa Sound Money Itu Penting",
+        topics: ["Prinsip Sound Money", "Time Preference", "Fiat vs Hard Money", "Formasi Modal"]
+      },
+      monetary: {
+        title: "Sejarah Moneter",
+        subtitle: "Kenapa Fiat Selalu Gagal",
+        topics: ["Era Standar Emas", "Bretton Woods", "Nixon Shock", "Kasus Hiperinflasi"]
+      },
+      halving: {
+        title: "Siklus Halving",
+        subtitle: "Pola 4 Tahun (Berbasis Data)",
+        topics: ["Pengurangan Pasokan", "Data Historis", "Dampak Harga", "Kebijakan Terprediksi"]
+      },
+      s2f: {
+        title: "Stock-to-Flow",
+        subtitle: "Kelangkaan → Nilai",
+        topics: ["Penjelasan Model S2F", "Bitcoin vs Emas", "Metrik Hardness", "Proyeksi Nilai"]
+      },
+      custody: {
+        title: "Self-Custody",
+        subtitle: "Bener-bener PAKE Bitcoin",
+        topics: ["Hardware Wallet", "Keamanan Seed", "Setup Multi-sig", "Signing Offline"]
+      }
+    },
+
+    // Module 1: Austrian Economics (Natural conversational Indonesian)
+    austrian: {
+      pageTitle: "Ekonomi Austria & Sound Money",
+      pageSubtitle: "Paham KENAPA Bitcoin itu penting - dari prinsip ekonomi dasar",
+      whyMatters: "Kenapa Ini Penting",
+      whyMattersDesc: "Ekonomi Austria adalah filosofi fundamental di balik Bitcoin. Tanpa paham ini, lu cuma liat Bitcoin sebagai 'aset digital' doang - nggak ngerti poinnya sama sekali.",
+      soundMoneyTitle: "Apa itu Sound Money?",
+      scarce: "Langka",
+      scarceDesc: "Pasokan terbatas dan bisa diprediksi",
+      fiatInfinite: "Fiat: Pasokan unlimited",
+      btcCap: "Bitcoin: Cuma 21 juta",
+      durable: "Tahan Lama",
+      durableDesc: "Awet selamanya tanpa rusak",
+      paperDegrades: "Kertas: Bisa rusak, terbakar",
+      btcDigital: "Bitcoin: Digital, permanen",
+      divisible: "Bisa Dipecah",
+      divisibleDesc: "Bisa dibagi jadi unit kecil",
+      goldHard: "Emas: Susah dibagi",
+      btcSats: "Bitcoin: 8 desimal (satoshi)",
+      timePreference: "Time Preference",
+      highTimePreference: "High Time Preference (Fiat)",
+      lowTimePreference: "Low Time Preference (Bitcoin)",
+      moneyLosesValue: "Uang nilainya turun → Habiskan SEKARANG",
+      noSave: "Nggak ada insentif nabung",
+      noCapital: "Nggak ada akumulasi modal",
+      povertyCycle: "Siklus kemiskinan",
+      moneyGainsValue: "Uang nilainya naik → NABUNG",
+      deferGratification: "Insentif tunda kepuasan",
+      capitalAccumulation: "Akumulasi modal",
+      wealthBuilding: "Bangun kekayaan",
+      inflationCalculator: "Kalkulator Dampak Inflasi",
+      inflationDesc: "Liat gimana inflasi ngehancurin daya beli lu:",
+      years: "Tahun:",
+      inflationRate: "Tingkat Inflasi:",
+      perYear: "per tahun",
+      initialAmount: "Jumlah Awal",
+      after: "Setelah",
+      purchasingPowerLost: "Daya Beli yang Hilang",
+      realityCheck: "Fakta keras:",
+      realityCheckDesc: "inflasi, $100 lu cuma jadi",
+      realityCheckDesc2: "dalam",
+      realityCheckDesc3: "tahun. Lu kehilangan",
+      realityCheckDesc4: "daya beli",
+      doingNothing: "tanpa berbuat apa-apa",
+      cantillonEffect: "Efek Cantillon",
+      cantillonDesc: "Yang paling deket sama mesin cetak uang, paling untung.",
+      cantillonStep1: "Bank Sentral cetak uang ($2T stimulus)",
+      cantillonStep2: "Bank & institusi dapet DULUAN",
+      cantillonStep3: "Mereka beli aset (saham, properti)",
+      cantillonStep4: "Harga aset naik",
+      cantillonStep5: "Yang kaya makin kaya (punya aset)",
+      cantillonStep6: "Uang baru sampai ke rakyat biasa (berbulan-bulan kemudian)",
+      cantillonStep7: "Yang miskin kena inflasi (harga sembako, sewa naik)",
+      realData: "Data Nyata (2020-2024)",
+      moneyPrinted: "Uang dicetak:",
+      sp500: "S&P 500:",
+      housing: "Properti:",
+      wages: "Gaji:",
+      groceries: "Sembako:",
+      winner: "Pemenang:",
+      assetHolders: "Pemilik aset (orang kaya)",
+      loser: "Pecundang:",
+      wageEarners: "Pekerja upahan (kelas menengah & miskin)",
+      btcVsFiat: "Bitcoin vs Fiat",
+      property: "Properti",
+      fiatUSD: "Fiat (USD)",
+      bitcoin: "Bitcoin",
+      supply: "Pasokan",
+      infinite: "Unlimited",
+      fixed21m: "Tetap 21 juta",
+      inflation: "Inflasi",
+      inflation2to10: "2-10% per tahun",
+      inflation0: "0% setelah 2140",
+      control: "Kontrol",
+      centralAuthority: "Otoritas pusat",
+      decentralized: "Terdesentralisasi",
+      issuance: "Penerbitan",
+      politicalDecision: "Keputusan politik",
+      mathAlgo: "Algoritma matematis",
+      confiscation: "Penyitaan",
+      easyFreeze: "Gampang (freeze akun)",
+      hardNeedKeys: "Susah (butuh kunci)",
+      transparency: "Transparansi",
+      opaque: "Nggak jelas",
+      auditable100: "100% bisa diaudit",
+      censorship: "Sensor",
+      easyBlock: "Gampang (blokir tx)",
+      resistantP2P: "Tahan sensor (P2P)",
+      keyTakeaways: "Poin Penting",
+      takeaway1: "Sound Money = Langka, tahan lama, bisa dipecah (Bitcoin unggul di semua aspek)",
+      takeaway2: "Time Preference menentukan perilaku: Fiat → konsumsi sekarang, Bitcoin → nabung & bangun",
+      takeaway3: "Efek Cantillon = Fiat nguntungin yang kaya (yang deket printer menang)",
+      takeaway4: "Inflasi = Pajak tersembunyi yang nyuri daya beli lu pelan-pelan",
+      takeaway5: "Bitcoin = Keluar dari sistem yang rusak (bukan cuma investasi, tapi revolusi ekonomi)",
+      backToModules: "Kembali ke Modul",
+      nextMonetary: "Selanjutnya: Sejarah Moneter"
+    },
+
+    // Navigation
+    nav: {
+      backToModules: "Kembali ke Modul",
+      backToHome: "Kembali ke Beranda",
+      next: "Selanjutnya:",
+      previous: "Sebelumnya:"
+    },
+
+    // Common
+    common: {
+      keyTakeaways: "Poin Penting",
+      readMore: "Baca Lebih Lanjut",
+      showExample: "Tampilkan",
+      hideExample: "Sembunyikan"
+    }
+  }
+};
+
+export function getTranslation(lang: Language) {
+  return translations[lang];
+}
